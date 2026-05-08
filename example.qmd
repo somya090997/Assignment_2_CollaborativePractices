@@ -64,3 +64,5 @@ Post this step, you can do the general git_push command to push changes in the t
 ![Adding New Branch: Testbranch](Add_a_branch.png){#fig-Addabranch}
 
 ## Adding a folder named "data"
+
+Using the command **mkdir** a folder named "**data**" was added that can be seen in the below @fig-addingafolder can be seen. This folder had the csv file from Assignment1. The regular git add, git commit and git push commands were used to make changes from 
