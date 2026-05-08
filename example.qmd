@@ -53,3 +53,8 @@ Below in figure @fig-PushingtoGit the files pushed from the local folder is refe
 ![Pushing Local To Remote](PushingtoGit.png){#fig-PushingtoGit}
 
 
+## Switching To Main To Create Conflict 
+![Switching to main](Switching from to main.png){#fig-Switchingtomain}
+
+Below in @fig-Switchingtomain we can see that we are now working. As we make changes in the `main branch` it will cause conflict with the other **testbranch**
+
