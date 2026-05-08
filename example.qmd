@@ -11,8 +11,7 @@ editor: visual
 
 ## Create a new RStudio Project:
 
-A project was created with the name Assignment2_CRP and a QMD file was made named **exmaple.qmd** and
-was rendered to the HTML format. As seen in @fig-Rendered_file
+A project was created with the name Assignment2_CRP and a QMD file was made named **exmaple.qmd** and was rendered to the HTML format. As seen in @fig-Rendered_file
 
 ![Rendered_file](Rendered_file.png){#fig-Rendered_file}
 
@@ -48,14 +47,50 @@ Uploaded local commits to the GitHub repository.
 
 ### Local files Pushed to Remote Git Repository
 
-Below in figure @fig-PushingtoGit the files pushed from the local folder is refelcted with the **git commit** message pushed through the command line. 
+Below in figure @fig-PushingtoGit the files pushed from the local folder is reflected with the `git commit` message pushed through the command line.
 
 ![Pushing Local To Remote](PushingtoGit.png){#fig-PushingtoGit}
 
+## Adding a New Branch: testbranch
+
+With help of the `git checkout -b testbranch` we not only create a new branch but also switch. The alternative to this can be `git switch -c testbranch`. As shown in the @fig-CreatingBranch
+
+![Creating New Branch: Testbranch](Creating_Branch.png){#fig-CreatingBranch}
+
+What issues can come while creating a branch? You can refer to the below picture @fig-Addabranch If you used the general `git push`, it will not work and will not show your commit. As for the first time, the branch as to be established with an upstream. Hence we will have to use `git push -u origin testbranch` or we can also try `git push --set-upstream origin testbranch`.
+
+Post this step, you can do the general git_push command to push changes in the testbranch.
+
+![Adding New Branch: Testbranch](Add_a_branch.png){#fig-Addabranch}
+
+## Adding a folder named "data"
+
+Using the command `mkdir` a folder named `data` was added that can be seen in the below @fig-Creatingfolder can be seen. This folder had the csv file from Assignment1. 
+
+The regular git add, git commit and git push commands were used to make changes reflect in remote repository as well. It can be seen in @fig-AddingFolder
+
+Note: Always check which branch you are working on or making the folder through `git branch`
+
+![Creating a folder: Data](Creating_folder.png){#fig-Creatingfolder}
+
+![Adding a folder: Data](Adding_Folder.png){#fig-AddingFolder}
+
+##### Amending the commit
+
+We will check our git log of commits with help of `git log --online`. In the below @fig-Amendingcommit you will see `git rebase -i HEAD~3` has been used to locate the commit to amend the commit message from "**Adding Folder**" (seen in @fig-AddingFolder ) to "**_Adding data folder with csv data_**". 
+
+Then `git commit --amend` is used to change the commit message within VIM. Once the message is edited, save it by typing `:wq` that saves the changes and gets back to the command line. 
+
+Why do we use `git push --force`? After using `git commit --amend`, the commit hash changed because Git created a new version of the commit. A normal push was rejected since the remote repository still contained the old commit history. Therefore, `git push --force` was required to overwrite the remote history with the amended commit.
+
+![Amending Commit](Amending_commit.png){#fig-Amendingcommit}
+
+Check the @fig-Amendedcommit to see the change in comment. 
+
+![Amended Commit](Amended_Commit.png){#fig-Amendedcommit}
 
 ## Switching To Main To Create Conflict 
 
 Below in @fig-Switchingtomain we can see that we are now working. As we make changes in the `main branch` it will cause conflict with the other **testbranch**
 
 ![Switching to main](Switching from to main.png){#fig-Switchingtomain}
-

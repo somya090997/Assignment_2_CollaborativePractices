@@ -116,7 +116,7 @@ Figure&nbsp;2: Initialising Git from Command Line
 </div>
 <section id="local-files-pushed-to-remote-git-repository" class="level3">
 <h3 class="anchored" data-anchor-id="local-files-pushed-to-remote-git-repository">Local files Pushed to Remote Git Repository</h3>
-<p>Below in figure <a href="#fig-PushingtoGit" class="quarto-xref">Figure&nbsp;3</a> the files pushed from the local folder is refelcted with the <strong>git commit</strong> message pushed through the command line.</p>
+<p>Below in figure <a href="#fig-PushingtoGit" class="quarto-xref">Figure&nbsp;3</a> the files pushed from the local folder is reflected with the <code>git commit</code> message pushed through the command line.</p>
 <div id="fig-PushingtoGit" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-PushingtoGit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -129,16 +129,95 @@ Figure&nbsp;3: Pushing Local To Remote
 </div>
 </section>
 </section>
+<section id="adding-a-new-branch-testbranch" class="level2">
+<h2 class="anchored" data-anchor-id="adding-a-new-branch-testbranch">Adding a New Branch: testbranch</h2>
+<p>With help of the <code>git checkout -b testbranch</code> we not only create a new branch but also switch. The alternative to this can be <code>git switch -c testbranch</code>. As shown in the <a href="#fig-CreatingBranch" class="quarto-xref">Figure&nbsp;4</a></p>
+<div id="fig-CreatingBranch" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-CreatingBranch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Creating_Branch.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-CreatingBranch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Creating New Branch: Testbranch
+</figcaption>
+</figure>
+</div>
+<p>What issues can come while creating a branch? You can refer to the below picture <a href="#fig-Addabranch" class="quarto-xref">Figure&nbsp;5</a> If you used the general <code>git push</code>, it will not work and will not show your commit. As for the first time, the branch as to be established with an upstream. Hence we will have to use <code>git push -u origin testbranch</code> or we can also try <code>git push --set-upstream origin testbranch</code>.</p>
+<p>Post this step, you can do the general git_push command to push changes in the testbranch.</p>
+<div id="fig-Addabranch" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Addabranch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Add_a_branch.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Addabranch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Adding New Branch: Testbranch
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="adding-a-folder-named-data" class="level2">
+<h2 class="anchored" data-anchor-id="adding-a-folder-named-data">Adding a folder named “data”</h2>
+<p>Using the command <code>mkdir</code> a folder named <code>data</code> was added that can be seen in the below <a href="#fig-Creatingfolder" class="quarto-xref">Figure&nbsp;6</a> can be seen. This folder had the csv file from Assignment1.</p>
+<p>The regular git add, git commit and git push commands were used to make changes reflect in remote repository as well. It can be seen in <a href="#fig-AddingFolder" class="quarto-xref">Figure&nbsp;7</a></p>
+<p>Note: Always check which branch you are working on or making the folder through <code>git branch</code></p>
+<div id="fig-Creatingfolder" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Creatingfolder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Creating_folder.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Creatingfolder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Creating a folder: Data
+</figcaption>
+</figure>
+</div>
+<div id="fig-AddingFolder" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-AddingFolder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Adding_Folder.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-AddingFolder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Adding a folder: Data
+</figcaption>
+</figure>
+</div>
+<section id="amending-the-commit" class="level5">
+<h5 class="anchored" data-anchor-id="amending-the-commit">Amending the commit</h5>
+<p>We will check our git log of commits with help of <code>git log --online</code>. In the below <a href="#fig-Amendingcommit" class="quarto-xref">Figure&nbsp;8</a> you will see <code>git rebase -i HEAD~3</code> has been used to locate the commit to amend the commit message from “<strong>Adding Folder</strong>” (seen in <a href="#fig-AddingFolder" class="quarto-xref">Figure&nbsp;7</a> ) to “<strong><em>Adding data folder with csv data</em></strong>”.</p>
+<p>Then <code>git commit --amend</code> is used to change the commit message within VIM. Once the message is edited, save it by typing <code>:wq</code> that saves the changes and gets back to the command line.</p>
+<p>Why do we use <code>git push --force</code>? After using <code>git commit --amend</code>, the commit hash changed because Git created a new version of the commit. A normal push was rejected since the remote repository still contained the old commit history. Therefore, <code>git push --force</code> was required to overwrite the remote history with the amended commit.</p>
+<div id="fig-Amendingcommit" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Amendingcommit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Amending_commit.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Amendingcommit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Amending Commit
+</figcaption>
+</figure>
+</div>
+<p>Check the <a href="#fig-Amendedcommit" class="quarto-xref">Figure&nbsp;9</a> to see the change in comment.</p>
+<div id="fig-Amendedcommit" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Amendedcommit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Amended_Commit.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Amendedcommit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Amended Commit
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
 <section id="switching-to-main-to-create-conflict" class="level2">
 <h2 class="anchored" data-anchor-id="switching-to-main-to-create-conflict">Switching To Main To Create Conflict</h2>
-<p>Below in <a href="#fig-Switchingtomain" class="quarto-xref">Figure&nbsp;4</a> we can see that we are now working. As we make changes in the <code>main branch</code> it will cause conflict with the other <strong>testbranch</strong></p>
+<p>Below in <a href="#fig-Switchingtomain" class="quarto-xref">Figure&nbsp;10</a> we can see that we are now working. As we make changes in the <code>main branch</code> it will cause conflict with the other <strong>testbranch</strong></p>
 <div id="fig-Switchingtomain" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Switchingtomain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Switching%20from%20to%20main.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Switchingtomain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Switching to main
+Figure&nbsp;10: Switching to main
 </figcaption>
 </figure>
 </div>
