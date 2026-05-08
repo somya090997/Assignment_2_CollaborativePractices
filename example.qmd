@@ -75,13 +75,16 @@ Note: Always check which branch you are working on or making the folder through 
 
 ![Adding a folder: Data](Adding_Folder.png){#fig-AddingFolder}
 
-### Amending the commit
+##### Amending the commit
 
 We will check our git log of commits with help of `git log --online`. In the below @fig-Amendingcommit you will see `git rebase -i HEAD~3` has been used to locate the commit to amend the commit message from "**Adding Folder**" (seen in @fig-AddingFolder ) to "**_Adding data folder with csv data_**". 
 
-Then **git commit --amend** is used to change the commit message within VIM. Once the message is edited, save it by typing `:wq`" that saves the changes and gets back to the command line. 
+Then `git commit --amend` is used to change the commit message within VIM. Once the message is edited, save it by typing `:wq` that saves the changes and gets back to the command line. 
 
 Why do we use `git push --force`? After using `git commit --amend`, the commit hash changed because Git created a new version of the commit. A normal push was rejected since the remote repository still contained the old commit history. Therefore, `git push --force` was required to overwrite the remote history with the amended commit.
 
 ![Amending Commit](Amending_commit.png){#fig-Amendingcommit}
 
+Check the @fig-Amendedcommit to see the change in comment. 
+
+![Amended Commit](Amended_Commit.png){#fig-Amendedcommit}
