@@ -65,4 +65,16 @@ Post this step, you can do the general git_push command to push changes in the t
 
 ## Adding a folder named "data"
 
-Using the command **mkdir** a folder named "**data**" was added that can be seen in the below @fig-addingafolder can be seen. This folder had the csv file from Assignment1. The regular git add, git commit and git push commands were used to make changes from 
+Using the command **mkdir** a folder named "**data**" was added that can be seen in the below @fig-Creatingfolder can be seen. This folder had the csv file from Assignment1. 
+
+The regular git add, git commit and git push commands were used to make changes reflect in remote repository as well. It can be seen in @fig-AddingFolder
+
+Note: Always check which branch you are working on or making the folder through "**git branch**"
+
+![Creating a folder: Data](Creating_folder.png){#fig-Creatingfolder}
+
+![Adding a folder: Data](Adding_Folder.png){#fig-AddingFolder}
+
+### Amending the commit
+
+We will check our git log of commits with help of **git log --online** 
