@@ -52,11 +52,22 @@ Below in figure @fig-PushingtoGit the files pushed from the local folder is refl
 
 ![Pushing Local To Remote](PushingtoGit.png){#fig-PushingtoGit}
 
-# Adding a New Branch: testbranch
+## Adding a New Branch: testbranch
 
-With help of the **git checkout -b testbranch** we not only create a new branch but also switch. The alternative to this can be **git switch -c testbranch**
+With help of the **git checkout -b testbranch** we not only create a new branch but also switch. The alternative to this can be **git switch -c testbranch**. As shown in the @fig-CreatingBranch
 
-What issues can come while creating a branch? As the case below, the general " **git push** " will not work for the first time as the branch as to be established with an upstream. Hence we will have to use **git push -u origin testbranch** or we can also try **git push --set-upstream origin testbranch**
+![Creating New Branch: Testbranch](Creating_Branch.png){#fig-CreatingBranch}
+
+
+What issues can come while creating a branch? You can refer to the below picture @fig-Addabranch If you used the general "**git push**", it will not work and will not show your commit. As for the first time, the branch as to be established with an upstream. Hence we will have to use **git push -u origin testbranch** or we can also try **git push --set-upstream origin testbranch**. 
+
+Post this step, you can do the general git_push command to push changes in the testbranch. 
+
+![Adding New Branch: Testbranch](Add_a_branch.png){#fig-Addabranch}
+
+
+## Adding a folder named "data"
+
 
 
 
