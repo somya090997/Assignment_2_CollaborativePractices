@@ -114,9 +114,9 @@ Figure&nbsp;2: Initialising Git from Command Line
 </figcaption>
 </figure>
 </div>
-<section id="remote-files-pushed-to-remote-git-repository" class="level3">
-<h3 class="anchored" data-anchor-id="remote-files-pushed-to-remote-git-repository">Remote files Pushed to Remote Git Repository</h3>
-<p>Below in figure <a href="#fig-PushingtoGit" class="quarto-xref">Figure&nbsp;3</a></p>
+<section id="local-files-pushed-to-remote-git-repository" class="level3">
+<h3 class="anchored" data-anchor-id="local-files-pushed-to-remote-git-repository">Local files Pushed to Remote Git Repository</h3>
+<p>Below in figure <a href="#fig-PushingtoGit" class="quarto-xref">Figure&nbsp;3</a> the files pushed from the local folder is reflected with the <strong>git commit</strong> message pushed through the command line.</p>
 <div id="fig-PushingtoGit" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-PushingtoGit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -128,6 +128,32 @@ Figure&nbsp;3: Pushing Local To Remote
 </figure>
 </div>
 </section>
+</section>
+<section id="adding-a-new-branch-testbranch" class="level2">
+<h2 class="anchored" data-anchor-id="adding-a-new-branch-testbranch">Adding a New Branch: testbranch</h2>
+<p>With help of the <strong>git checkout -b testbranch</strong> we not only create a new branch but also switch. The alternative to this can be <strong>git switch -c testbranch</strong>. As shown in the <a href="#fig-CreatingBranch" class="quarto-xref">Figure&nbsp;4</a></p>
+<div id="fig-CreatingBranch" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-CreatingBranch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Creating_Branch.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-CreatingBranch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Creating New Branch: Testbranch
+</figcaption>
+</figure>
+</div>
+<p>What issues can come while creating a branch? You can refer to the below picture <a href="#fig-Addabranch" class="quarto-xref">Figure&nbsp;5</a> If you used the general “<strong>git push</strong>”, it will not work and will not show your commit. As for the first time, the branch as to be established with an upstream. Hence we will have to use <strong>git push -u origin testbranch</strong> or we can also try <strong>git push –set-upstream origin testbranch</strong>.</p>
+<p>Post this step, you can do the general git_push command to push changes in the testbranch.</p>
+<div id="fig-Addabranch" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Addabranch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Add_a_branch.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Addabranch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Adding New Branch: Testbranch
+</figcaption>
+</figure>
+</div>
 </section>
 </section>
 
