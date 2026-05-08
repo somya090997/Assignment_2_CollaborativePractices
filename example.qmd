@@ -54,5 +54,9 @@ Below in figure @fig-PushingtoGit the files pushed from the local folder is refl
 
 # Adding a New Branch: testbranch
 
-With help of the **git checkout -b testbranch** we not only create a new branch but also switch. The alternative to this can be **git switch -c testbranch** 
+With help of the **git checkout -b testbranch** we not only create a new branch but also switch. The alternative to this can be **git switch -c testbranch**
+
+What issues can come while creating a branch? As the case below, the general " **git push** " will not work for the first time as the branch as to be established with an upstream. Hence we will have to use **git push -u origin testbranch** or we can also try **git push --set-upstream origin testbranch**
+
+
 
