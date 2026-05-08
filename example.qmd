@@ -48,8 +48,11 @@ Uploaded local commits to the GitHub repository.
 
 ### Local files Pushed to Remote Git Repository
 
-Below in figure @fig-PushingtoGit the files pushed from the local folder is refelcted with the **git commit** message pushed through the command line. 
+Below in figure @fig-PushingtoGit the files pushed from the local folder is reflected with the **git commit** message pushed through the command line. 
 
 ![Pushing Local To Remote](PushingtoGit.png){#fig-PushingtoGit}
 
+# Adding a New Branch: testbranch
+
+With help of the **git checkout -b testbranch** we not only create a new branch but also switch. The alternative to this can be **git switch -c testbranch** 
 
