@@ -94,3 +94,12 @@ Check the @fig-Amendedcommit to see the change in comment.
 Below in @fig-Switchingtomain we can see that we are now working. As we make changes in the `main branch` it will cause conflict with the other **testbranch**
 
 ![Switching to main](Switching from to main.png){#fig-Switchingtomain}
+
+## Creating and Solving a merge conflict
+
+In the below @fig-ConflictCreated you can see that the conflict has been created in the _example.qmd_ file. The @fig-Commandlineconflict shows the same message in the command line. 
+
+![Conflict in QMD](Conflict_Created.png){#fig-ConflictCreated}
+
+![Conflict message in CL](Command_line_conflict.png){#fig-Commandlineconflict}
+
