@@ -4,6 +4,7 @@ author: "Somya Verma"
 format: 
   html:
     theme: superhero
+  pdf: default
 editor: visual
 ---
 
@@ -17,15 +18,17 @@ A project was created with the name Assignment2_CRP and a QMD file was made name
 
 ## Initialise this folder as a git repository: Commnad Line
 
-The following steps were taken in order to push the local repository to the remote and initialising Git through the command line. The commands can be seen in @fig-InitialisingGit
+The following steps were taken in order to push the local repository to the remote and initialising Git through the command line. The commit can be seen in @fig-initialcommit
 
 **cd .Assignment2_CRP**
 
 Changed into the project directory.
 
-**git clone**
+**git init**
 
-Cloned the remote GitHub repository to the local machine.
+![Initialising Git from Command Line](initial_commit.png){#fig-initialcommit}
+
+Made a Git repository through local on GitHub repository. It creates a hidden `.git` directory which will track the files. Below is the first initial commit.  
 
 **git status**
 
@@ -43,7 +46,6 @@ Created a commit containing the QMD and R project files.
 
 Uploaded local commits to the GitHub repository.
 
-![Initialising Git from Command Line](Initialising_Git.png){#fig-InitialisingGit}
 
 ### Local files Pushed to Remote Git Repository
 
@@ -125,3 +127,25 @@ The tags can be seen in the github respository. As seen in the @fig-TagGithub
 
 ![Github Tag](Tag_Github.png){#fig-TagGithub}
 
+## Deleting the test branch
+
+To delete the test branch, make sure you are **NOT** still working on it. Switch from the testbranch to main. Use the command `git branch -d testbranch` to get it deleted from the local. Now, inorder to get away with the branch on the remote, push the changes with `git push origin --delete testbranch`. You can see the same in @fig-commandlinedelete and @fig-deletioofbranch
+
+![Github Tag](command_line_delete.png){#fig-commandlinedelete}
+
+![Github Branch deleted](deletion_of_ branch.png){#fig-deletioofbranch}
+
+## Commit log in condensed form
+Below is the condended form of the commits done using the command `git log --oneline --graph --decorate --all`. It shows not only the history of commits but also a map of merge history and the branch structure.  
+
+![Condensed Commit history](Condensed_log.png){#fig-Condensedlog}
+
+## Simple Plot and Changes unchanged
+
+The following plot uses the built-in `cars` dataset.
+
+```{r}
+plot(trees)
+```
+
+The plot has been pushed to the remote repository. 

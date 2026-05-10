@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -91,11 +126,21 @@ Figure&nbsp;1: Rendered_file
 </section>
 <section id="initialise-this-folder-as-a-git-repository-commnad-line" class="level2">
 <h2 class="anchored" data-anchor-id="initialise-this-folder-as-a-git-repository-commnad-line">Initialise this folder as a git repository: Commnad Line</h2>
-<p>The following steps were taken in order to push the local repository to the remote and initialising Git through the command line. The commands can be seen in <a href="#fig-InitialisingGit" class="quarto-xref">Figure&nbsp;2</a></p>
+<p>The following steps were taken in order to push the local repository to the remote and initialising Git through the command line. The commit can be seen in <a href="#fig-initialcommit" class="quarto-xref">Figure&nbsp;2</a></p>
 <p><strong>cd .Assignment2_CRP</strong></p>
 <p>Changed into the project directory.</p>
-<p><strong>git clone</strong></p>
-<p>Cloned the remote GitHub repository to the local machine.</p>
+<p><strong>git init</strong></p>
+<div id="fig-initialcommit" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-initialcommit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="initial_commit.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-initialcommit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Initialising Git from Command Line
+</figcaption>
+</figure>
+</div>
+<p>Made a Git repository through local on GitHub repository. It creates a hidden <code>.git</code> directory which will track the files. Below is the first initial commit.</p>
 <p><strong>git status</strong></p>
 <p>Checked the current repository status and tracked files.</p>
 <p><strong>git add .</strong></p>
@@ -104,16 +149,6 @@ Figure&nbsp;1: Rendered_file
 <p>Created a commit containing the QMD and R project files.</p>
 <p><strong>git push</strong></p>
 <p>Uploaded local commits to the GitHub repository.</p>
-<div id="fig-InitialisingGit" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-InitialisingGit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Initialising_Git.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-InitialisingGit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Initialising Git from Command Line
-</figcaption>
-</figure>
-</div>
 <section id="local-files-pushed-to-remote-git-repository" class="level3">
 <h3 class="anchored" data-anchor-id="local-files-pushed-to-remote-git-repository">Local files Pushed to Remote Git Repository</h3>
 <p>Below in figure <a href="#fig-PushingtoGit" class="quarto-xref">Figure&nbsp;3</a> the files pushed from the local folder is reflected with the <code>git commit</code> message pushed through the command line.</p>
@@ -301,6 +336,58 @@ Figure&nbsp;16: Git Graph Tag
 Figure&nbsp;17: Github Tag
 </figcaption>
 </figure>
+</div>
+</section>
+<section id="deleting-the-test-branch" class="level2">
+<h2 class="anchored" data-anchor-id="deleting-the-test-branch">Deleting the test branch</h2>
+<p>To delete the test branch, make sure you are <strong>NOT</strong> still working on it. Switch from the testbranch to main. Use the command <code>git branch -d testbranch</code> to get it deleted from the local. Now, inorder to get away with the branch on the remote, push the changes with <code>git push origin --delete testbranch</code>. You can see the same in <a href="#fig-commandlinedelete" class="quarto-xref">Figure&nbsp;18</a> and <a href="#fig-deletioofbranch" class="quarto-xref">Figure&nbsp;19</a></p>
+<div id="fig-commandlinedelete" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-commandlinedelete-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="command_line_delete.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-commandlinedelete-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;18: Github Tag
+</figcaption>
+</figure>
+</div>
+<div id="fig-deletioofbranch" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-deletioofbranch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="deletion_of_%20branch.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-deletioofbranch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;19: Github Branch deleted
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="commit-log-in-condensed-form" class="level2">
+<h2 class="anchored" data-anchor-id="commit-log-in-condensed-form">Commit log in condensed form</h2>
+<p>Below is the condended form of the commits done using the command <code>git log --oneline --graph --decorate --all</code>. It shows not only the history of commits but also a map of merge history and the branch structure.</p>
+<div id="fig-Condensedlog" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Condensedlog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Condensed_log.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Condensedlog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;20: Condensed Commit history
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="simple-plot" class="level2">
+<h2 class="anchored" data-anchor-id="simple-plot">Simple Plot</h2>
+<p>The following plot uses the built-in <code>cars</code> dataset.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(trees)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="example_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 </section>
