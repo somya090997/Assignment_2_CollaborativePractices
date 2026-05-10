@@ -97,7 +97,8 @@ Below in @fig-Switchingtomain we can see that we are now working. As we make cha
 
 ## Creating and Solving a merge conflict
 
-In the below @fig-ConflictCreated you can see that the conflict has been created in the _example.qmd_ file. The @fig-Commandlineconflict shows the same message in the command line. 
+In the below @fig-ConflictCreated you can see that the conflict has been created in the _example.qmd_ file. The @fig-Commandlineconflict
+shows the same message in the command line. 
 
 ![Conflict in QMD](Conflict_Created.png){#fig-ConflictCreated}
 
