@@ -104,3 +104,24 @@ shows the same message in the command line.
 
 ![Conflict message in CL](Command_line_conflict.png){#fig-Commandlineconflict}
 
+In the below @fig-Resolvingandmerging you can see that the conflict have been resolved and the branch has been merged as well. 
+
+![Resolving and Merging](Resolving_and _merging.png){#fig-Resolvingandmerging}
+
+You can also see the merging through the git Graph below.
+
+![Git Graph](Merged_testbranch.png){#fig-Mergedtestbranch}
+
+## Tagging v1.0 on main
+
+Once the branch is mereged on Main, the tag is added to that commit with help of the command `git tag -a v1.0 -m` in the command line as in @fig-AddingTagv1. You can see in @fig-tagcommit that it has been added, in @fig you can see it is reflected in the github repository as well. 
+
+![Terminal Tag](Adding_Tag_v1.png){#fig-AddingTagv1}
+
+
+![Git Graph Tag](tag_commit.png){#fig-tagcommit}
+
+The tags can be seen in the github respository. As seen in the @fig-TagGithub
+
+![Github Tag](Tag_Github.png){#fig-TagGithub}
+
