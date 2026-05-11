@@ -77,10 +77,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="quarto-light">
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="example.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -127,9 +128,9 @@ Figure&nbsp;1: Rendered_file
 <section id="initialise-this-folder-as-a-git-repository-commnad-line" class="level2">
 <h2 class="anchored" data-anchor-id="initialise-this-folder-as-a-git-repository-commnad-line">Initialise this folder as a git repository: Commnad Line</h2>
 <p>The following steps were taken in order to push the local repository to the remote and initialising Git through the command line. The commit can be seen in <a href="#fig-initialcommit" class="quarto-xref">Figure&nbsp;2</a></p>
-<p><strong>cd .Assignment2_CRP</strong></p>
+<p><code>cd .Assignment2_CRP</code></p>
 <p>Changed into the project directory.</p>
-<p><strong>git init</strong></p>
+<p><code>git init</code></p>
 <div id="fig-initialcommit" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-initialcommit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -141,13 +142,13 @@ Figure&nbsp;2: Initialising Git from Command Line
 </figure>
 </div>
 <p>Made a Git repository through local on GitHub repository. It creates a hidden <code>.git</code> directory which will track the files. Below is the first initial commit.</p>
-<p><strong>git status</strong></p>
+<p><code>git status</code></p>
 <p>Checked the current repository status and tracked files.</p>
-<p><strong>git add .</strong></p>
+<p><code>git add .</code></p>
 <p>Staged all project files for commit.</p>
-<p><strong>git commit -m “Adding QMD and R Project files”</strong></p>
+<p><code>git commit -m "Adding QMD and R Project files"</code></p>
 <p>Created a commit containing the QMD and R project files.</p>
-<p><strong>git push</strong></p>
+<p><code>git push</code></p>
 <p>Uploaded local commits to the GitHub repository.</p>
 <section id="local-files-pushed-to-remote-git-repository" class="level3">
 <h3 class="anchored" data-anchor-id="local-files-pushed-to-remote-git-repository">Local files Pushed to Remote Git Repository</h3>
@@ -376,8 +377,8 @@ Figure&nbsp;20: Condensed Commit history
 </figure>
 </div>
 </section>
-<section id="simple-plot" class="level2">
-<h2 class="anchored" data-anchor-id="simple-plot">Simple Plot</h2>
+<section id="simple-plot-and-maintaining-local-changes" class="level2">
+<h2 class="anchored" data-anchor-id="simple-plot-and-maintaining-local-changes">Simple Plot and Maintaining Local Changes</h2>
 <p>The following plot uses the built-in <code>cars</code> dataset.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(trees)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -388,6 +389,39 @@ Figure&nbsp;20: Condensed Commit history
 </figure>
 </div>
 </div>
+</div>
+<p>A new section containing a simple plot was added to example.qmd. The changes were staged and committed using <code>git commit</code> and <code>git add</code> and then pushed. It was then check with help of <code>git log</code> as seen in <a href="#fig-Addplotcommit" class="quarto-xref">Figure&nbsp;21</a></p>
+<div id="fig-Addplotcommit" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Addplotcommit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Add_plot_commit.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Addplotcommit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;21: Adding Commit for Plot
+</figcaption>
+</figure>
+</div>
+<p>The above commit was undone with help of <code>git reset</code>. The <strong>–soft</strong> option removed the commit from the Git history while preserving all local changes and keeping them staged.</p>
+<div id="fig-usinggitRESET" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-usinggitRESET-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="using_gitRESET.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-usinggitRESET-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;22: Git Reset Used
+</figcaption>
+</figure>
+</div>
+<p>After running the reset command, the repository status was checked. The output showed that <code>example.qmd</code> was still modified and staged for commit, confirming that the commit had been removed without losing any local work. Additionally, <code>git log --oneline</code> no longer displayed the <strong><em>Add simple plot section</em></strong> commit.</p>
+<div id="fig-NoChanges" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-NoChanges-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="No_Changes.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-NoChanges-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;23: Local Changes Maintained
+</figcaption>
+</figure>
 </div>
 </section>
 </section>

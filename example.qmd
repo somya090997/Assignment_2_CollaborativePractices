@@ -1,11 +1,11 @@
 ---
 title: "Git_Guide"
 author: "Somya Verma"
-format: 
+format:
+  pdf:
+    theme: superhero
   html:
     theme: superhero
-  pdf: default
-editor: visual
 ---
 
 # **The guide**
@@ -20,29 +20,29 @@ A project was created with the name Assignment2_CRP and a QMD file was made name
 
 The following steps were taken in order to push the local repository to the remote and initialising Git through the command line. The commit can be seen in @fig-initialcommit
 
-**cd .Assignment2_CRP**
+`cd .Assignment2_CRP`
 
 Changed into the project directory.
 
-**git init**
+`git init`
 
 ![Initialising Git from Command Line](initial_commit.png){#fig-initialcommit}
 
 Made a Git repository through local on GitHub repository. It creates a hidden `.git` directory which will track the files. Below is the first initial commit.  
 
-**git status**
+`git status`
 
 Checked the current repository status and tracked files.
 
-**git add .**
+`git add .`
 
 Staged all project files for commit.
 
-**git commit -m "Adding QMD and R Project files"**
+`git commit -m "Adding QMD and R Project files"`
 
 Created a commit containing the QMD and R project files.
 
-**git push**
+`git push`
 
 Uploaded local commits to the GitHub repository.
 
@@ -140,7 +140,7 @@ Below is the condended form of the commits done using the command `git log --one
 
 ![Condensed Commit history](Condensed_log.png){#fig-Condensedlog}
 
-## Simple Plot and Changes unchanged
+## Simple Plot and Maintaining Local Changes
 
 The following plot uses the built-in `cars` dataset.
 
@@ -148,4 +148,16 @@ The following plot uses the built-in `cars` dataset.
 plot(trees)
 ```
 
-The plot has been pushed to the remote repository. 
+A new section containing a simple plot was added to example.qmd. The changes were staged and committed using `git commit` and `git add` and then pushed. It was then check with help of `git log` as seen in @fig-Addplotcommit
+
+![Adding Commit for Plot](Add_plot_commit.png){#fig-Addplotcommit}
+
+The above commit was undone with help of `git reset`. The **--soft** option removed the commit from the Git history while preserving all local changes and keeping them staged.
+
+![Git Reset Used](using_gitRESET.png){#fig-usinggitRESET}
+
+After running the reset command, the repository status was checked. The output showed that `example.qmd` was still modified and staged for commit, confirming that the commit had been removed without losing any local work. Additionally, `git log --oneline` no longer displayed the **_Add simple plot section_** commit. 
+
+![Local Changes Maintained](No_Changes.png){#fig-NoChanges}
+
+
